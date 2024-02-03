@@ -19,13 +19,13 @@ try {
     $mail->isSMTP(); // Utiliser SMTP
     $mail->Host = 'mail.thomasdindin.fr'; // Serveur SMTP
     $mail->SMTPAuth = true; // Activer l'authentification SMTP
-    $mail->Username = 'contact@thomasdindin.fr'; // Nom d'utilisateur SMTP
-    $mail->Password = 'pP2*BchT*GxNBBx'; // Mot de passe SMTP
+    $mail->Username = getenv('SMTP_USERNAME'); // Nom d'utilisateur SMTP
+    $mail->Password = getenv('SMTP_PASSWORD'); // Mot de passe SMTP    
     $mail->SMTPSecure = 'ssl'; // Activer le cryptage TLS, `ssl` également accepté
     $mail->Port = 465; // Port TCP pour se connecter à
 
     // Destinataires
-    $mail->setFrom('contact@thomasdindin.fr', 'Formulaire de Contact');
+    $mail->setFrom('contact@thomasdindin.fr', 'Soumission de formulaire de contact');
     $mail->addAddress('thomas.dindin@gmail.com', 'Thomas Dindin');
 
     // Contenu

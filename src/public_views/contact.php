@@ -20,7 +20,7 @@
         </div>
         <button type="submit" class="primary">Envoyer</button>
 
-        <div class="g-recaptcha" data-sitekey="6LcZQl4pAAAAAAFzuJtiPxeeOzBaINg3Jxqa-Xs5"></div>
+        <!-- Ne marche pas, pas le temps de le refaire : div class="g-recaptcha" data-sitekey="6LcZQl4pAAAAAAFzuJtiPxeeOzBaINg3Jxqa-Xs5"></div -->
     </form>
 </section>
 
