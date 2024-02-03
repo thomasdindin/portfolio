@@ -1,4 +1,4 @@
-/* On déclare ici les variables */
+/* Variables */
 :root {
     --main-bg-color: #060918;
     --secondary-color: #5413cc;
@@ -7,7 +7,6 @@
 }
 
 /* Reset */
-
 * {
     padding: 0;
     margin: 0;
@@ -17,21 +16,16 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Paramètres du body */
-
+/* Body */
 body {
     background-color: var(--main-bg-color);
     color: var(--text-color);
 }
 
-/*
-    Style du header 
-*/
-
+/* Header */
 header {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    
     position: fixed;
     border-width: 0 0 1px 0;
     border-color: white;
@@ -40,14 +34,13 @@ header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-
     width: 100vw;
-    padding: 16px;
-
+    padding: 32px 0;
     font-family: "Open Sans", sans-serif;
     z-index: 10;
 
     p {
+        margin-left: 16px;
         color: var(--text-highlight-color);
 
         span {
@@ -55,18 +48,18 @@ header {
         }
     }
 
-    button {
-        margin-right: 2em;
+    a:first-child {
+        text-decoration: none;
     }
 
     .sidenav {
         margin: 0;
-
         width: 100%;
 
         &.closed {
             display: none;
         }
+
         &.active {
             display: flex;
             flex-direction: column;
@@ -111,6 +104,7 @@ header {
                         transform-origin: right;
                         background-color: var(--secondary-color);
                     }
+
                     &:hover {
                         color: var(--text-highlight-color);
                     }
@@ -123,28 +117,33 @@ header {
             }
         }
     }
+
+    #menu {
+        display: none;
+    }
 }
 
 .phone-nav {
     display: none;
 }
 
-/* Commun aux sections et au footer pour la police */
-
+/* Common styles for sections and footer */
 section,
 footer {
     font-family: "Poppins";
 }
 
+/* Primary Button */
 .primary {
     text-decoration: none;
-    position: relative;
+    display: inline-block;
     padding: 16px 32px;
     font-weight: bold;
     cursor: pointer;
-    overflow: hidden;
     background-color: transparent;
     color: whitesmoke;
+    position: relative;
+    overflow: hidden;
     border: 3px solid var(--secondary-color);
 }
 
@@ -153,58 +152,68 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* Commence avec la largeur à 100% */
     height: 100%;
     background-color: var(--secondary-color);
     z-index: -1;
-
-    transition: 250ms ease-in;
-    transition-delay: 250ms;
+    transition: width 0.25s ease-in; /* Réduisez la largeur au survol */
 }
 
 .primary:hover::before {
-    transform: translateX(100%);
-    transform-origin: right;
+    width: 0; /* Réduisez la largeur à 0 pour le faire disparaître */
 }
 
 
-button.secondary {
-    border: 1px solid #5413cc;
-    color: #5413cc;
-    border: none;
-}
 
+
+
+
+/* Main Content */
 main {
     h2 {
         color: var(--secondary-color);
     }
 
     section {
-        height: 100vh;
         padding: 10vh;
+        overflow: hidden;
+
+        &:first-child {
+            height: 100vh;
+
+            canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+        }
+
+        a {
+            color: var(--secondary-color);
+
+            &:hover {
+                color: var(--text-highlight-color);
+            }
+        }
     }
 }
 
-section a {
-    color: var(--secondary-color);
-    &:hover {
-        color: var(--text-highlight-color);
-    }
-}
-
+/* Footer and Header Links */
 header a,
 footer a {
-    a {
-        text-decoration: none;
-        color: var(--text-color);
-    }
+    text-decoration: none;
+    color: var(--text-color);
 }
 
+/* Navigation */
 .nav {
     list-style: none;
     display: flex;
     margin-left: auto;
-    align-items: center;
+
     li {
         margin: 0 8px;
         flex-wrap: wrap;
@@ -240,26 +249,7 @@ footer a {
     }
 }
 
-#hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-
-    h1 {
-        color: var(--text-highlight-color);
-        font: 20rm;
-        text-align: center;
-    }
-}
-
-#contenuAPropos {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-}
-
+/* Footer */
 footer {
     display: flex;
     flex-direction: column;
@@ -273,7 +263,6 @@ footer {
     .nav {
         padding: 2vw 0;
         justify-content: space-around;
-
         border-style: solid;
         border-width: 1px 0 1px 0;
     }
@@ -297,83 +286,19 @@ footer {
     }
 }
 
+/* Blur Effect */
 .blur {
     filter: blur(1.5rem);
 }
 
-
-
-.article-wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: #140432;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    transition: 1s ease-in-out;
-
-    width: 300px;
-    height: 500px;
-    border-radius: 16px;
-
-    figure img {
-        width: 300px;
-        height: 168.667px;
-        border-radius: 16px 16px 0 0;
-    }
-
-    .article-body {
-        padding: 1em;
-        display: flex;
-        flex-direction: column;
-
-        p {
-            height: 150px;
-            text-align: left;
-            font-size: 14;
-            padding: 1rem 0;
-        }
-
-        .skills {
-            flex-grow: 1;
-            border-top: 1px solid var(--text-color);
-            border-bottom: 1px solid var(--text-color);
-
-            padding: 1em;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .read-more {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-        }
-    }
-}
-
-
-#exp {
-    display: flex;
-    flex-direction: column;
-
-    .articles {
-        margin: 1.5rem auto;
-        display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-    }
-
-    #cv {
-        width: 100%;
-        text-align: center;
-
-    }
-}
-
+/* Media Queries */
 @media (max-width: 800px) {
     .phone-nav {
         display: flex;
+    }
+
+    section:first-child {
+        height: auto;
     }
 
     header {
@@ -392,71 +317,44 @@ footer {
             display: none;
         }
     }
+
     main section {
         padding: 6vh 16px;
     }
+
     .nav {
         display: none;
     }
-    #contenuAPropos {
-        flex-direction: column;
-        overflow: hidden;
 
-        img {
-            height: 200;
-            width: 100%;
-        }
+    #menu {
+        display: inline;
     }
 }
 
 @keyframes rotateUp {
     0% {
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 
     25% {
-        -moz-transform: rotate(-10deg);
-        -webkit-transform: rotate(-10deg);
-        -o-transform: rotate(-10deg);
-        -ms-transform: rotate(-10deg);
         transform: rotate(-10deg);
     }
 
     75% {
-        -moz-transform: rotate(200deg);
-        -webkit-transform: rotate(200deg);
-        -o-transform: rotate(200deg);
-        -ms-transform: rotate(200deg);
         transform: rotate(200deg);
     }
 
     100% {
-        -moz-transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
         transform: rotate(180deg);
     }
 }
 
 @keyframes rotateDown {
     0% {
-        -moz-transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
         transform: rotate(180deg);
     }
 
     100% {
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 }

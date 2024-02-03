@@ -1,5 +1,7 @@
 RewriteEngine On
 
+
+
 # Ne pas réécrire les fichiers ou dossiers existants
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/* home.scss */
+#hero {
+  padding: 0;
+}
+#hero h1 {
+  margin-top: 10vh;
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--text-highlight-color);
+}
+#hero p {
+  color: var(--text-color);
+  text-align: center;
+  padding: 1.5rem;
+}
+#hero #changingText {
+  border-right: 2px solid var(--text-highlight-color); /* Curseur clignotant */
+  font-weight: bold; /* Rend le texte plus visible */
+  white-space: nowrap; /* Assure que le texte ne passe pas à la ligne */
+  overflow: hidden; /* Empêche le débordement du texte */
+  letter-spacing: 0.15em; /* Espacement des lettres */
+  color: var(--text-highlight-color);
+  animation: blinkingCursor 0.8s steps(5, start) infinite;
+}
+#hero .wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+#hero .container {
+  display: flex;
+  width: 300vw;
+}
+#hero .container .col {
+  display: flex;
+  gap: 3em;
+}
+#hero .container .col p {
+  font-size: 0.8rem;
+}
+#hero .container section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hero .container section h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+#hero .container section p {
+  font-size: 1.2rem;
+  width: 50vw;
+}
+#hero .container section ul {
+  list-style-type: none;
+  display: flex;
+  gap: 3em;
+  width: 100%;
+  height: 300px;
+  padding: 0;
+}
+#hero .container section ul li {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+#hero .sec2 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  list-style: disc;
+}
+#hero a.primary {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#exp #cv {
+  text-align: center;
+}
+#exp .articles {
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+#exp .article-wrapper {
+  background-color: #140432;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 300px;
+  height: 500px;
+  border-radius: 16px;
+}
+#exp .article-wrapper figure img {
+  width: 100%;
+  height: 168;
+  border-radius: 16px 16px 0 0;
+}
+#exp .article-wrapper .article-body {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+#exp .article-wrapper .article-body p {
+  height: 150px;
+  text-align: left;
+  font-size: 14px;
+  padding: 1rem 0;
+}
+#exp .article-wrapper .article-body .skills {
+  flex-grow: 1;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+#exp .article-wrapper .article-body .read-more {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#exp .retours {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+#exp .retours .retour {
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: rgb(20, 4, 50);
+  border-left: var(--secondary-color) 5px solid;
+  border-radius: 0 16px 16px 0;
+  padding: 1em;
+}
+#exp .retours .retour p {
+  text-align: left;
+  font-size: 16px;
+  flex-grow: 1;
+}
+#exp .retours .retour p::before {
+  content: "“";
+}
+#exp .retours .retour p::after {
+  content: "”";
+}
+#exp .retours .retour p::before {
+  margin-right: 0.25em;
+}
+#exp .retours .retour p::after {
+  margin-left: 0.25em;
+}
+#exp .retours .retour .auteur {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: right;
+}
+#exp .pagination-container {
+  text-align: center;
+}
+#exp .pagination-container .pagination-btn {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+#exp .pagination-container .pagination-btn.active .pagination-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  animation: fillUp linear 5000ms;
+}
+
+#about .timeline {
+  margin: 5em auto;
+  max-width: 34.15em;
+}
+#about .timeline .checkpoint {
+  max-width: 34em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  position: relative;
+}
+#about .timeline .checkpoint .timeline-item {
+  border: 2px solid var(--text-highlight-color);
+  border-radius: 1em;
+  padding: 1.5em;
+}
+#about .timeline .checkpoint:nth-child(odd) .timeline-item {
+  border-left: 3px solid var(--text-highlight-color);
+  padding-left: 3em;
+  transform: translateX(17em);
+}
+#about .timeline .checkpoint:nth-child(odd)::before {
+  left: 0;
+}
+#about .timeline .checkpoint:nth-child(even) .timeline-item {
+  border-right: 3px solid var(--text-highlight-color);
+  padding-right: 3em;
+  transform: translateX(-17em);
+}
+#about .timeline .checkpoint:nth-child(even)::before {
+  right: 0;
+}
+#about .timeline .checkpoint:nth-child(odd)::before, #about .timeline .checkpoint:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  width: 3em;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--text-highlight-color);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .articles {
+    padding: 16px 0;
+    display: flex; /* Rend le conteneur flexible */
+    overflow-x: auto; /* Active le défilement horizontal */
+    overflow-y: hidden; /* Empêche le défilement vertical dans le conteneur */
+    -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
+    max-width: 100vw; /* Assure que le conteneur ne dépasse pas la largeur de la fenêtre */
+    margin: 0 auto; /* Centre le conteneur si nécessaire */
+  }
+  .articles::-webkit-scrollbar {
+    display: none; /* Cache la barre de défilement */
+  }
+  .articles article {
+    flex-shrink: 0; /* Empêche les articles de réduire leur taille */
+    margin-right: 20px; /* Espacement entre les articles */
+  }
+  .articles article:last-child {
+    margin-right: 0; /* Supprime l'espacement du dernier article */
+  }
+}
+/* Animation pour le curseur clignotant */
+@keyframes blinkingCursor {
+  from {
+    border-right-color: var(--text-highlight-color);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}/*# sourceMappingURL=home.css.map */

@@ -24,13 +24,19 @@
     <!-- Pour les icônes -->
     <script src="https://kit.fontawesome.com/6c69bc0812.js" crossorigin="anonymous"></script>
 
-    <!-- Pour les animations de fond -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <!-- Le JavaScript général -->
+    <script type="module" src="./assets/js/app.js"></script>
 
-    <!-- Le JavaScript -->
-    <script src="./assets/js/app.js"></script>
+    <!-- Le JavaScript spécifique à la page -->
+    <?php
+    $page = 'home'; // Valeur par défaut pour la page d'accueil
+    if (isset($_GET['page']) && preg_match('/^[a-z0-9\-]+$/i', $_GET['page'])) {
+        $page = $_GET['page'];
+    }
+    if (file_exists('./assets/js/' . $page . '.js')) {
+        echo '<script type="module" src="./assets/js/' . $page . '.js"></script>';
+    }
+    ?>
 </body>
 
 </html>

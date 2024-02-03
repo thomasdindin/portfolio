@@ -1,21 +1,30 @@
 <?php 
+    // Inclusion du header : 
     include_once 'src/header.php';
+
+    // On regarde si la page demandée existe, sinon on affiche la page 404 :
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
         // Sécurité de base pour éviter les inclusions de fichiers non souhaitées
-        // Cela suppose que vos scripts se trouvent dans un dossier 'pages'
         if (preg_match('/^[a-z0-9\-]+$/i', $page)) {
-            $file = 'src/public_views/' . $page . '.php';
-            if (file_exists($file)) {
-                include($file);
-            } else {
-                include('src/public_views//404.php'); // page d'erreur personnalisée
-            }
+            $file = $page;
         } else {
-            include('src/public_views//404.php'); // page d'erreur personnalisée
+            $file = '404';
         }
     } else {
-        include('src/public_views//home.php'); // page d'accueil par défaut
+        $file = 'home';
     }
+
+    // Inclusion de la page demandée :
+    echo '<main id="' . $file . '">';
+    if (file_exists('src/public_views/' . $file . '.php')) {
+        include_once 'src/public_views/' . $file . '.php';
+    } else {
+        include_once 'src/public_views/404.php';
+        echo $_GET['page'];
+    }
+    echo '</main>';
+
+    // Inclusion du footer :
     include_once 'src/footer.php';
     
