@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     // Votre formulaire
     const form = document.querySelector('form');
