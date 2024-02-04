@@ -3,8 +3,13 @@
 // Styles spécifiques à la page d'accueil
 #hero {
     padding: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
     h1 {
-        margin-top: 10vh;
+        margin-top: auto;
         font-size: 3rem;
         text-align: center;
         padding: 2rem 0;
@@ -15,6 +20,7 @@
         color: var(--text-color);
         text-align: center;
         padding: 1.5rem;
+        margin-bottom: auto;
     }
 
     #changingText {
@@ -26,65 +32,6 @@
         color: var(--text-highlight-color);
 
         animation: blinkingCursor 0.8s steps(5, start) infinite;
-    }
-
-    .wrapper {
-        overflow-x: hidden;
-        position: relative;
-    }
-
-    .container {
-        display: flex;
-        width: 300vw;
-
-        .col {
-            display: flex;
-            gap: 3em;
-
-            p {
-                font-size: 0.8rem;
-            }
-        }
-
-        section {
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            h1 {
-                font-size: 3rem;
-                margin: 0;
-            }
-
-            p {
-                font-size: 1.2rem;
-                width: 50vw;
-            }
-
-            ul {
-                list-style-type: none;
-                display: flex;
-                gap: 3em;
-                width: 100%;
-                height: 300px;
-                padding: 0;
-
-                li {
-                    flex-grow: 1;
-                    display: flex;
-                    flex-wrap: wrap;
-                }
-            }
-        }
-    }
-
-    .sec2 ul {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        list-style: disc;
     }
 
     a.primary {
@@ -218,55 +165,190 @@
 }
 
 #about {
+    h3 {
+        text-align: center;
+        color: var(--text-highlight-color);
+        border-bottom: var(--text-highlight-color) 2px solid;
+        padding: 1rem 0;
+    }
+
+    .infos-perso {
+        margin: 1.5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+
+        .info:not(:last-child) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
     .timeline {
-        margin: 5em auto;
-        max-width: 34.15em;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 1.5rem auto;
+        justify-content: center;
+        align-items: center;
 
-        .checkpoint {
-            max-width: 34em;
-            padding-top: 2em;
-            padding-bottom: 2em;
-            position: relative;
+        .timeline-line {
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            background-color: var(--secondary-color);
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-            .timeline-item {
-                border: 2px solid var(--text-highlight-color);
-                border-radius: 1em;
-                padding: 1.5em;
+        .timeline-item {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            width: 40%;
+            padding: 1.5rem;
+            background-color: #140432;
+            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+            .date {
+                font-size: 1.5rem;
+                color: var(--text-highlight-color);
+            }
+
+            .description {
+                font-size: 1.5rem;
+                color: var(--text-color);
             }
 
             &:nth-child(odd) {
-                .timeline-item {
-                    border-left: 3px solid var(--text-highlight-color);
-                    padding-left: 3em;
-                    transform: translateX(17em);
-                }
-
-                &::before {
-                    left: 0;
-                }
+                flex-direction: row-reverse;
+                border-left: var(--secondary-color) 5px solid;
+                text-align: right;
+                transform: translateX(60%);
+                border-radius: 0 16px 16px 0;
             }
 
             &:nth-child(even) {
-                .timeline-item {
-                    border-right: 3px solid var(--text-highlight-color);
-                    padding-right: 3em;
-                    transform: translateX(-17em);
-                }
+                border-right: var(--secondary-color) 5px solid;
+                text-align: left;
+                transform: translateX(-60%);
+                border-radius: 16px 0 0 16px;
+            }
+        }
+    }
+}
 
-                &::before {
-                    right: 0;
+#veille {
+    position: relative;
+    height: 70vh;
+    
+    .spinner-wrapper {
+        height: 370px;
+        width: 370px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .spinner-inner {
+            position: absolute;
+            z-index: 2;
+            img {
+                padding: 2rem;
+                border-radius: 50%;
+                width: 300px;
+                transition: all 0.3s ease-in-out;
+                filter: grayscale(100%);
+                
+                &:hover {
+                    filter: grayscale(0%);
+                    border-color: var(--text-highlight-color);
+                }
+            }
+        }
+        
+        .spinner-outer {
+            z-index: 1;
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 450px; // Doit correspondre à la largeur totale du cercle de rotation souhaité
+            height: 450px; // Doit correspondre à la hauteur totale du cercle de rotation souhaité
+            border: 2px dashed var(--secondary-color);
+            border-radius: 100%;
+            animation: rotate-right 10s infinite linear;
+            transform-origin: center;
+
+            &:hover {
+                animation-play-state: paused;
+
+                .link img {
+                    animation-play-state: paused;
+
+                    &::after {
+                        content: "Cliquez pour en savoir plus";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: var(--text-highlight-color);
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
                 }
             }
 
-            &:nth-child(odd)::before, &:nth-child(even)::before {
-                content: "";
-                position: absolute;
-                width: 3em;
-                height: 3px;
+            .link {
+                background: var(--text-highlight-color);
                 border-radius: 50%;
-                background-color: var(--text-highlight-color);
-                top: 50%;
-                transform: translateY(-50%);
+                position: relative;
+                width: 60px;
+                height: 60px;
+                margin: -20px; // La moitié de la largeur/hauteur pour centrer les liens sur le chemin
+            
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    animation: rotate-left 10s infinite linear;
+                    transform-origin: center;
+                }
+                
+                &:nth-child(1) {
+                    top: 50%;
+                    left: 0;
+                    transform-origin: 100% 50%;
+                }
+                
+                &:nth-child(2) {
+                    top: 100%;
+                    left: 50%;
+                    transform-origin: 50% 0;
+                }
+                
+                &:nth-child(3) {
+                    top: 50%;
+                    left: 100%;
+                    transform-origin: 0 50%;
+                }
+
+                &:hover::after {
+                    content: data-tooltip;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--text-color);
+                    width: 100px;
+                    padding: 0.5rem;
+                    border-radius: 8px;
+                    color: var(--text-highlight-color);
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -304,5 +386,23 @@
     }
     to {
         border-right-color: transparent;
+    }
+}
+
+@keyframes rotate-right {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-left {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
     }
 }

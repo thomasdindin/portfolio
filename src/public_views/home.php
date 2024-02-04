@@ -1,81 +1,73 @@
 <!-- HERO -->
 <section id="hero">
-    <div class="wrapper">
-        <div class="container scrollx">
-            <section class="sec1 pin">
-                <h1 class="anim">Bienvenue sur mon portfolio !</h1>
-                <p class="anim">Je suis <span id="changingText"> Thomas Dindin.</span></p>
-            </section>
-            <section class="sec2 pin">
-                <h1 class="anim">Quelques informations ... </h1>
-
-                <div class="col anim">
-                    <ul>
-                        <li class="anim">Lieu de résidence : Maubeuge, France</li>
-                        <li class="anim">email : thomas.dindin@gmail.com</li>
-                        <li class="anim">Développeur Web et mobile</li>
-                        <li class="anim"><?php
-                                            $today = new DateTime();
-                                            $tenthOfMarch = new DateTime('2001-03-10');
-                                            $interval = $today->diff($tenthOfMarch);
-                                            echo $interval->y . " ans";
-                                            ?></li>
-                        <li class="anim">Permis B</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="sec3 pin">
-                <h1 class="anim">Mes qualités</h1>
-
-                <div class="col anim">
-                    <ul>
-                        <li class="anim">Autonome</li>
-                        <li class="anim">Curieux</li>
-                        <li class="anim">Créatif</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </div>
+    <h1 class="anim">Bienvenue sur mon portfolio !</h1>
+    <p class="anim">Je suis <span id="changingText"> Thomas Dindin.</span></p>
 </section>
 
 <!-- A propos -->
 <section id="about">
-    <h2>Mon parcours</h2>
+    <h2>A propos de moi ...</h2>
     <div class="container">
-  <div class="timeline">
-    <ul>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+        <h3>
+            Qui suis-je ?
+        </h3>
+        <div class="infos-perso">
+            <div class="info">
+                Maubeuge, France.
+            </div>
+            <div class="info">
+                <?php echo date('Y') - 2001; ?> ans.
+            </div>
+            <div class="info">
+                Véhiculé.
+            </div>
+            <div class="info">
+                thomas.dindin@gmail.com
+            </div>
+            <div class="info">
+                06 10 94 40 94
+            </div>
+            <div class="info">
+                Qualités : Autonome, rigoureux, curieux.
+            </div>
         </div>
-      </li>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 2</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+
+    </div>
+
+    <div class="container">
+        <h3>
+            Mon parcours
+        </h3>
+
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="date">2022 - 2024</h4>
+                    <p>BTS SIO option SLAM </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="date">2021 - 2022</h4>
+                    <p>Travail à l'usine.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="date">2019 - 2021</h4>
+                    <p>Licence SESI bilingue, université de Lille 1.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="date">2019</h4>
+                    <p>Baccalauréat Scientifique, spécialité SVT.</p>
+                </div>
+            </div>
         </div>
-      </li>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 3</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 4</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+    </div>
 </section>
 <!-- Experience -->
 <section id="exp">
@@ -97,7 +89,7 @@
                         <span>API</span>
                     </div>
 
-                    <a href="#" class="read-more">
+                    <a href="/cocoveto" class="read-more">
                         En savoir plus
                     </a>
                 </div>
@@ -119,7 +111,7 @@
                         <span>Tailwind</span>
                     </div>
 
-                    <a href="#" class="read-more">
+                    <a href="/lyreco" class="read-more">
                         En savoir plus
                     </a>
                 </div>
@@ -144,15 +136,30 @@
 <!-- Veille technologique : Flutter-->
 <section id="veille">
     <h2>Veille technologique</h2>
-    <p>
-        Lors de mon premier stage, j'ai découvert le Framework Flutter, qui permet de développer une application
-        une seule fois et de la rendre disponible sur plusieurs plateformes.
-        Flutter a vraiment piqué ma curiosité, car l'architecture des projets, le concept de développement est,
-        à mon sens, très intéressant. Je m'informe de manière quotidienne sur le sujet
-        en regardant, par exemple, des "Shorts" sur YouTube. Je trouve aussi les vidéos de <a href="https://www.youtube.com/@createdbykoko" target="_blank" rel="noopener noreferrer">MitchKoko</a> et <a href="https://www.youtube.com/@MaxonFlutter" target="_blank" rel="noopener noreferrer">MaxonFlutter</a> très instructives.
-        Pour suivre l'actualité et maintenir ma version de Flutter à jour, je consulte aussi régulièrement la
-        section <a href="https://docs.flutter.dev/release/whats-new" target="_blank" rel="noopener noreferrer">What's New ?</a> du site officiel de Flutter.
-    </p>
+
+    <div class="spinner-wrapper">
+        <div class="spinner-inner">
+            <img src="/assets/img/flutter_logo.png" alt="Logo de flutter">
+        </div>
+
+        <div class="spinner-outer">
+            <div class="link" data-tooltip="MitchKoko">
+                <a href="https://www.youtube.com/@createdbykoko" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/svg/YouTube-Icon-Almost-Black-Logo.wine.svg" alt="MitchKoko channel">
+                </a>
+            </div>
+            <div class="link" data-tooltip="MaxonFlutter">
+                <a href="https://www.youtube.com/@MaxonFlutter" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/svg/YouTube-Icon-Almost-Black-Logo.wine.svg" alt="MaxonFlutter channel">
+                </a>
+            </div>
+            <div class="link" data-tooltip="Flutter doc">
+                <a href="https://docs.flutter.dev/release/whats-new" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/svg/GNOME_Web-Logo.wine.svg" alt="Flutter documentation">
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Contact -->

@@ -65,42 +65,26 @@ document.addEventListener('DOMContentLoaded', function () {
         spacing: 20.00
     })
 
-    const sections = gsap.utils.toArray(".container section");
 
-    let scrollTween = gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
+
+
+    // grab the scoped text
+    let text = document.querySelectorAll(".anim");
+
+    // bump out if there's no items to animate
+    if (text.length === 0) return
+
+    // do a little stagger
+    gsap.from(text, {
+        y: -130,
+        opacity: 0,
+        duration: 2,
+        ease: "elastic",
+        stagger: 0.1,
         scrollTrigger: {
-            trigger: "#hero",
-            pin: true,
-            scrub: 1,
-            snap: 1 / (sections.length - 1),
-            end: "+=1500",
+            trigger: text,
+            start: "left center",
         }
-    });
-
-
-    // whizz around the sections
-    sections.forEach((section) => {
-        // grab the scoped text
-        let text = section.querySelectorAll(".anim");
-
-        // bump out if there's no items to animate
-        if (text.length === 0) return
-
-        // do a little stagger
-        gsap.from(text, {
-            y: -130,
-            opacity: 0,
-            duration: 2,
-            ease: "elastic",
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: section,
-                containerAnimation: scrollTween,
-                start: "left center",
-            }
-        });
     });
 
 
@@ -136,6 +120,38 @@ document.addEventListener('DOMContentLoaded', function () {
             end: 'bottom top',
             toggleActions: 'play none none reverse',
         }
+    });
+
+    // Animation pour les infos
+    let infos = gsap.utils.toArray('.info');
+    infos.forEach((info, index) => {
+        gsap.from(info, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: info,
+                start: 'top 90%',
+                end: 'bottom top',
+                toggleActions: 'play none none reverse',
+            }
+        });
+    });
+
+    // Animation pour la timeline
+    let timeline = gsap.utils.toArray('.timeline-item');
+    timeline.forEach((timeline, index) => {
+        gsap.from(timeline, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: timeline,
+                start: 'top 90%',
+                end: 'bottom top',
+                toggleActions: 'play none none reverse',
+            }
+        });
     });
 
     // Animation pour le lien de téléchargement du CV
