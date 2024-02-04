@@ -1,10 +1,11 @@
 RewriteEngine On
 
-
+# Exclure le répertoire "form" de la réécriture
+RewriteRule ^src/form/ - [L,NC]
 
 # Ne pas réécrire les fichiers ou dossiers existants
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Réécrire toutes les URLs vers index.php
+# Réécrire toutes les autres URLs vers index.php
 RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
