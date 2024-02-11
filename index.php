@@ -21,7 +21,6 @@ if (file_exists('src/public_views/' . $file . '.php')) {
     include_once 'src/public_views/' . $file . '.php';
 } else {
     include_once 'src/public_views/404.php';
-    echo $_GET['page'];
 }
 echo '</main>';
 

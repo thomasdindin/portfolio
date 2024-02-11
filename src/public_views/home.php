@@ -1,3 +1,10 @@
+<nav>
+    <a href="#about">A propos</a>
+    <a href="#exp">Experience</a>
+    <a href="#veille">Veille technologique</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 <!-- HERO -->
 <section id="hero">
     <h1 class="anim">Bienvenue sur mon portfolio !</h1>
@@ -44,7 +51,7 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h4 class="date">2022 - 2024</h4>
-                    <p>BTS SIO option SLAM </p>
+                    <a href="/btssio">BTS SIO option SLAM </a>
                 </div>
             </div>
             <div class="timeline-item">

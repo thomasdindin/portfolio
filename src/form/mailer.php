@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['subj
         // Contenu
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body    = $message;
+        $mail->Body    = $message. "Envoyé par : " . $email;
         $mail->AltBody = strip_tags($message);
 
         $mail->send();

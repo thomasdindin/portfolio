@@ -1,28 +1,20 @@
 <footer>
         <div id="footer-nav">
-            <ul class="nav">
-                <li><a href="#about">A propos</a></li>
-                <li><a href="#exp">Experience</a></li>
-                <li><a href="#veille">Veille</a></li>
-
-            </ul>
+            <ul class="nav"></ul>
         </div>
         <div class="social">
             <div class="socials">
                 <a href="https://github.com/thomasdindin" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-github"></i>
+                    <img src="/assets/svg/icons8-github.svg" alt="GitHub">
                 </a>
                 <a href="https://www.linkedin.com/in/thomas-dindin-3135a9261/" target="_blank"
                     rel="noopener noreferrer">
-                    <i class="fa-brands fa-linkedin-in"></i>
+                    <img src="/assets/svg/icons8-linkedin.svg" alt="LinkedIn">
                 </a>
             </div>
             <span>© <?php echo date("Y"); ?> Thomas Dindin</span>
         </div>
     </footer>
-
-    <!-- Pour les icônes -->
-    <script src="https://kit.fontawesome.com/6c69bc0812.js" crossorigin="anonymous"></script>
 
     <!-- Le JavaScript général -->
     <script type="module" src="./assets/js/app.js"></script>

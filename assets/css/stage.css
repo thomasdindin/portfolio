@@ -1,0 +1,79 @@
+article {
+  margin-bottom: 40px;
+}
+article section {
+  padding: 0;
+}
+article section h3 {
+  color: var(--text-highlight-color);
+  border-bottom: 1px solid var(--text-highlight-color);
+}
+article#skills .skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+article#skills .skill-container .skill h3 {
+  color: var(--text-highlight-color);
+}
+
+h1,
+h2,
+h3 {
+  margin: 20px 0;
+}
+
+p,
+ul {
+  line-height: 1.6;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  section {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  }
+  nav a {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 576px) {
+  section {
+    padding: 10px;
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 15px 0;
+  }
+}/*# sourceMappingURL=stage.css.map */

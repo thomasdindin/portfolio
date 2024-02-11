@@ -20,6 +20,7 @@ textarea {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    font-family: "Poppins";
 }
 
 button.primary {
@@ -28,5 +29,14 @@ button.primary {
     border: none;
     padding: 10px 20px;
     border-radius: 3px;
+
+    width: 100%;
     cursor: pointer;
+}
+
+.swal-modal {
+    font-family: "Poppins";
+    * {
+        font-family: "Poppins";
+    }
 }

@@ -1,0 +1,47 @@
+#error {
+    display: flex;
+    flex-direction: column;
+    .container {
+        h1 {
+            font-size: 10rem;
+            margin: 0;
+            text-align: center; // Center the h1 horizontally
+        }
+
+        h2 {
+            margin: 0;
+            text-transform: uppercase; // Convert h2 text to uppercase
+            text-align: center; // Center the h2 horizontally
+            width: 100%; // Make the h2 as wide as the h1
+        }
+
+        .error-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; // Center the .error-details vertically
+            align-items: center; // Center the .error-details horizontally
+            gap: 16px; // Add space between the .error-details children
+            margin: 16px 0; // Add space around the .error-details
+            p {
+                font-size: 1.5rem;
+                margin: 0;
+                text-align: center; // Center the p horizontally
+            }
+        }
+
+        .error-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: center; // Center the .error-actions horizontally
+            gap: 5rem;
+            a {
+                font-size: 1.5rem;
+                margin: 0;
+                display: flex;
+                text-align: center; // Center the button horizontally
+
+                justify-content: space-between; // Split the button evenly
+            }
+        }
+    }
+}

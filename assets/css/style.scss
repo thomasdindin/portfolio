@@ -10,6 +10,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -20,6 +21,10 @@ html {
 body {
     background-color: var(--main-bg-color);
     color: var(--text-color);
+
+    nav {
+        display: none;
+    }
 }
 
 /* Header */
@@ -34,7 +39,7 @@ header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    width: 100vw;
+    width: 100%;
     padding: 32px 0;
     font-family: "Open Sans", sans-serif;
     z-index: 10;
@@ -51,86 +56,6 @@ header {
     a:first-child {
         text-decoration: none;
     }
-
-    .sidenav {
-        margin: 0;
-        width: 100%;
-
-        &.closed {
-            display: none;
-        }
-
-        &.active {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .column-nav {
-            display: flex;
-            flex-direction: column;
-            list-style: none;
-            width: 100%;
-            margin-top: 1.5rem;
-            gap: 1em;
-
-            button {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            li {
-                width: 100%;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                a {
-                    width: 100%;
-                    color: var(--text-color);
-                    text-decoration: none;
-                    text-align: center;
-                    position: relative;
-                    transition: 0.5s;
-
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        width: 100%;
-                        height: 2px;
-                        top: 100%;
-                        left: 0;
-                        transition: transform 0.5s;
-                        transform: scaleX(0);
-                        transform-origin: right;
-                        background-color: var(--secondary-color);
-                    }
-
-                    &:hover {
-                        color: var(--text-highlight-color);
-                    }
-
-                    &:hover::after {
-                        transform: scaleX(1);
-                        transform-origin: left;
-                    }
-                }
-            }
-        }
-    }
-
-    #menu {
-        display: none;
-    }
-}
-
-.phone-nav {
-    display: none;
-}
-
-/* Common styles for sections and footer */
-section,
-footer {
-    font-family: "Poppins";
 }
 
 /* Primary Button */
@@ -162,11 +87,6 @@ footer {
 .primary:hover::before {
     width: 0; /* Réduisez la largeur à 0 pour le faire disparaître */
 }
-
-
-
-
-
 
 /* Main Content */
 main {
@@ -202,48 +122,50 @@ main {
 }
 
 /* Footer and Header Links */
-header a,
-footer a {
-    text-decoration: none;
-    color: var(--text-color);
-}
+header,
+footer {
+    a {
+        text-decoration: none;
+        color: var(--text-color);
+    }
 
-/* Navigation */
-.nav {
-    list-style: none;
-    display: flex;
-    margin-left: auto;
+    /* Navigation */
+    .nav {
+        list-style: none;
+        display: flex;
+        margin-left: auto;
 
-    li {
-        margin: 0 8px;
-        flex-wrap: wrap;
+        li {
+            margin: 0 8px;
+            flex-wrap: wrap;
 
-        a {
-            text-decoration: none;
-            color: var(--text-color);
-            position: relative;
-            transition: 0.5s;
+            a {
+                text-decoration: none;
+                color: var(--text-color);
+                position: relative;
+                transition: 0.5s;
 
-            &::after {
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 2px;
-                top: 100%;
-                left: 0;
-                transition: transform 0.5s;
-                transform: scaleX(0);
-                transform-origin: right;
-                background-color: var(--secondary-color);
-            }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    top: 100%;
+                    left: 0;
+                    transition: transform 0.5s;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    background-color: var(--secondary-color);
+                }
 
-            &:hover::after {
-                transform: scaleX(1);
-                transform-origin: left;
-            }
+                &:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
 
-            &:hover {
-                color: var(--text-highlight-color);
+                &:hover {
+                    color: var(--text-highlight-color);
+                }
             }
         }
     }
@@ -274,14 +196,10 @@ footer {
         align-items: center;
         gap: 16px;
 
-        .socials * {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.5rem;
-
-            &:hover {
-                color: var(--text-highlight-color);
-            }
+        .socials a img {
+            filter: grayscale(100%);
+            height: 44px;
+            transition: 0.5s;
         }
     }
 }
@@ -293,14 +211,6 @@ footer {
 
 /* Media Queries */
 @media (max-width: 800px) {
-    .phone-nav {
-        display: flex;
-    }
-
-    section:first-child {
-        height: auto;
-    }
-
     header {
         padding: 1vh 0;
 
@@ -308,12 +218,10 @@ footer {
             flex-basis: 70%;
             margin: 1vh 0;
         }
+    }
 
-        i {
-            text-align: right;
-        }
-
-        #bigContact {
+    header, footer {
+        .nav {
             display: none;
         }
     }
@@ -324,37 +232,5 @@ footer {
 
     .nav {
         display: none;
-    }
-
-    #menu {
-        display: inline;
-    }
-}
-
-@keyframes rotateUp {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-10deg);
-    }
-
-    75% {
-        transform: rotate(200deg);
-    }
-
-    100% {
-        transform: rotate(180deg);
-    }
-}
-
-@keyframes rotateDown {
-    0% {
-        transform: rotate(180deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
     }
 }
