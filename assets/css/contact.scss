@@ -1,11 +1,16 @@
 .contact-form {
-    max-width: 600px;
     margin: 0 auto;
+
+    p {
+        padding: 10px 0;
+        text-align: center;
+    }
 }
 
 .form-group {
     margin-bottom: 20px;
 }
+
 
 label {
     display: block;
@@ -21,6 +26,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 3px;
     font-family: "Poppins";
+    resize: none;
 }
 
 button.primary {

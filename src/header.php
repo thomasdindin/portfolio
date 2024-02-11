@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ceci est mon site portfolio. Je m'appelle Thomas Dindin, et je suis développeur junior.">
-    <meta name="keywords" content="portfolio, développeur, junior, Thomas Dindin">
+    <meta name="keywords" content="portfolio, développeur, Thomas Dindin">
     <meta name="author" content="Thomas Dindin">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://thomasdindin.fr">
@@ -24,7 +24,7 @@
     if (file_exists('./assets/css/' . $pageCss . '.css')) {
         echo '<link rel="stylesheet" href="./assets/css/' . $pageCss . '.css">';
     } else {
-        if ($_GET['page'] === 'cocoveto' || $_GET['page'] === 'lyreco' || $_GET['page'] === 'btssio') echo '<link rel="stylesheet" href="./assets/css/stage.css">';
+        if ($_GET['page'] === 'cocoveto' || $_GET['page'] === 'lyreco' || $_GET['page'] === 'btssio' || $_GET['page'] === 'flutter') echo '<link rel="stylesheet" href="./assets/css/stage.css">';
         else echo '<link rel="stylesheet" href="./assets/css/404.css">';
     }
     ?>

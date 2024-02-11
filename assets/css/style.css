@@ -93,6 +93,12 @@ main section {
   padding: 10vh;
   overflow: hidden;
 }
+main section h3 {
+  text-align: center;
+  color: var(--text-highlight-color);
+  border-bottom: var(--text-highlight-color) 2px solid;
+  padding: 1rem 0;
+}
 main section:first-child {
   height: 100vh;
 }

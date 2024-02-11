@@ -21,7 +21,6 @@
         color: var(--text-color);
         text-align: center;
         padding: 1.5rem;
-        margin-bottom: auto;
     }
 
     #changingText {
@@ -38,6 +37,95 @@
     a.primary {
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: auto;
+    }
+
+    .cta {
+        display: flex;
+        padding: 10px 45px;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        color: white;
+        background: var(--secondary-color);
+        transition: 1s;
+        box-shadow: 6px 6px 0 black;
+        transform: skewX(-15deg);
+    }
+
+    .cta:focus {
+        outline: none;
+    }
+
+    .cta:hover {
+        transition: 0.5s;
+        box-shadow: 10px 10px 0 black;
+    }
+
+    .cta span:nth-child(2) {
+        transition: 0.5s;
+        margin-right: 0px;
+    }
+
+    .cta:hover span:nth-child(2) {
+        transition: 0.5s;
+        margin-right: 45px;
+    }
+
+    span {
+        transform: skewX(15deg);
+    }
+
+    span:nth-child(2) {
+        width: 20px;
+        margin-left: 30px;
+        position: relative;
+        top: 12%;
+    }
+
+    /**************SVG****************/
+
+    path.one {
+        transition: 0.4s;
+        transform: translateX(-60%);
+    }
+
+    path.two {
+        transition: 0.5s;
+        transform: translateX(-30%);
+    }
+
+    .cta:hover path.three {
+        animation: color_anim 1s infinite 0.2s;
+    }
+
+    .cta:hover path.one {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.6s;
+    }
+
+    .cta:hover path.two {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.4s;
+    }
+
+    /* SVG animations */
+
+    @keyframes color_anim {
+        0% {
+            fill: white;
+        }
+        50% {
+            fill: #fbc638;
+        }
+        100% {
+            fill: white;
+        }
     }
 }
 
@@ -166,13 +254,6 @@
 }
 
 #about {
-    h3 {
-        text-align: center;
-        color: var(--text-highlight-color);
-        border-bottom: var(--text-highlight-color) 2px solid;
-        padding: 1rem 0;
-    }
-
     .infos-perso {
         margin: 1.5rem 0;
         display: flex;
@@ -243,114 +324,56 @@
 }
 
 #veille {
-    position: relative;
-    height: 70vh;
-    
-    .spinner-wrapper {
-        height: 370px;
-        width: 370px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    p {
+        margin: 1.5rem 0;
+    }
 
-        .spinner-inner {
-            position: absolute;
-            z-index: 2;
-            img {
-                padding: 2rem;
-                border-radius: 50%;
-                width: 300px;
-                transition: all 0.3s ease-in-out;
-                filter: grayscale(100%);
-                
-                &:hover {
-                    filter: grayscale(0%);
-                    border-color: var(--text-highlight-color);
-                }
-            }
+    a {
+        margin: 0 auto;
+        width: 33%;
+        text-align: center;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        color: white;
+        background-color: var(--secondary-color);
+        border-radius: 16px;
+        transition: 0.5s;
+
+
+        &:hover {
+            transform: scale(1.1);
         }
-        
-        .spinner-outer {
-            z-index: 1;
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 450px; // Doit correspondre à la largeur totale du cercle de rotation souhaité
-            height: 450px; // Doit correspondre à la hauteur totale du cercle de rotation souhaité
-            border: 2px dashed var(--secondary-color);
-            border-radius: 100%;
-            animation: rotate-right 10s infinite linear;
-            transform-origin: center;
 
-            &:hover {
-                animation-play-state: paused;
+    }
+    
 
-                .link img {
-                    animation-play-state: paused;
 
-                    &::after {
-                        content: "Cliquez pour en savoir plus";
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        color: var(--text-highlight-color);
-                        font-size: 1.5rem;
-                        font-weight: bold;
-                    }
-                }
-            }
+}
 
-            .link {
-                background: var(--text-highlight-color);
-                border-radius: 50%;
-                position: relative;
-                width: 60px;
-                height: 60px;
-                margin: -20px; // La moitié de la largeur/hauteur pour centrer les liens sur le chemin
-            
-                
-                img {
-                    width: 100%;
-                    height: 100%;
-                    animation: rotate-left 10s infinite linear;
-                    transform-origin: center;
-                }
-                
-                &:nth-child(1) {
-                    top: 50%;
-                    left: 0;
-                    transform-origin: 100% 50%;
-                }
-                
-                &:nth-child(2) {
-                    top: 100%;
-                    left: 50%;
-                    transform-origin: 50% 0;
-                }
-                
-                &:nth-child(3) {
-                    top: 50%;
-                    left: 100%;
-                    transform-origin: 0 50%;
-                }
+@media screen and (max-width: 768px) {
+    .articles {
+        padding: 16px 0;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100vw;
+        margin: 0 auto; // CENTER HORIZONTALLY
 
-                &:hover::after {
-                    content: data-tooltip;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background: var(--text-color);
-                    width: 100px;
-                    padding: 0.5rem;
-                    border-radius: 8px;
-                    color: var(--text-highlight-color);
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                }
-            }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .articles article {
+        flex-shrink: 0;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

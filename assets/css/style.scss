@@ -98,6 +98,13 @@ main {
         padding: 10vh;
         overflow: hidden;
 
+        h3 {
+            text-align: center;
+            color: var(--text-highlight-color);
+            border-bottom: var(--text-highlight-color) 2px solid;
+            padding: 1rem 0;
+        }
+
         &:first-child {
             height: 100vh;
 

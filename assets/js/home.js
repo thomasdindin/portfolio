@@ -1,7 +1,4 @@
-
 document.addEventListener('DOMContentLoaded', function () {
-
-
     // GSAP : 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -87,6 +84,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    gsap.from('#hero .wrapper', {
+        y: -130,
+        opacity: 0,
+        duration: 3,
+        ease: "elastic",
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: '#hero .wrapper',
+            start: "left center",
+        }
+    })
+
 
     // Animation pour les articles
     gsap.utils.toArray('.article-wrapper').forEach((article, index) => {
@@ -166,4 +175,5 @@ document.addEventListener('DOMContentLoaded', function () {
             toggleActions: 'play none none reverse',
         }
     });
+
 }, false);
