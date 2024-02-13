@@ -89,6 +89,9 @@ header a:first-child {
 main h2 {
   color: var(--secondary-color);
 }
+main h2::before {
+  content: "> ";
+}
 main section {
   padding: 10vh;
   overflow: hidden;

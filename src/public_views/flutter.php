@@ -17,22 +17,47 @@
     <!-- Section expliquant pourquoi l'auteur a choisi Flutter -->
     <article id="why-flutter">
         <h2>Pourquoi Flutter ?</h2>
-        <p>Ma découverte du développement mobile a débuté par des approches natives, mais c'est Flutter qui a capturé mon intérêt. Son approche innovante et sa capacité à rationaliser le développement multiplateforme ont fait de lui le choix idéal pour mon parcours professionnel et mon développement personnel.</p>
+        <p>Ma découverte du développement mobile a débuté par des approches natives, mais c'est Flutter qui a capturé mon intérêt suite à mon premier stage de par sa facilité d'utilisation et sa synthaxe particulière. </p>
     </article>
 
     <!-- Section détaillant comment l'auteur effectue sa veille technologique -->
     <article id="how-did-i-keep-up">
         <h2>Ma veille</h2>
-        <p>Pour rester à jour avec Flutter, j'emploie une stratégie de veille technologique diversifiée :</p>
+        <h3>Comment je m'informe : </h3>
         <ul>
-            <li><a href="https://flutter.dev/docs" target="_blank" rel="noopener noreferrer">Documentation officielle de Flutter</a> pour les bases et meilleures pratiques.</li>
-            <li><a href="https://docs.flutter.dev/whats-new" target="_blank" rel="noopener noreferrer">What's new</a> pour les dernières mises à jour et fonctionnalités.</li>
-            <li>Des articles et tutoriels sur <a href="https://medium.com/" target="_blank" rel="noopener noreferrer">Medium</a> pour des insights de la communauté.</li>
-            <li>Des chaînes YouTube telles que <a href="https://www.youtube.com/flutterdev" target="_blank" rel="noopener noreferrer">Flutter's Official Channel</a> pour des tutoriels vidéo et démonstrations.</li>
-                        <li>Échanges professionnels et mises à jour sur <a href="https://www.linkedin.com/showcase/flutterdev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</li>
+            <li>
+                Le site de flutter :
+                <ul>
+                    <li><a href="https://flutter.dev/docs" target="_blank" rel="noopener noreferrer">Documentation officielle</a></li>
+                    <li><a href="https://docs.flutter.dev/whats-new" target="_blank" rel="noopener noreferrer">What's new</a> pour les dernières mises à jour et fonctionnalités.</li>
+                </ul>
+            </li>
+            <li>Des articles et tutoriels sur <a href="https://medium.com/flutter" target="_blank" rel="noopener noreferrer">Medium</a> pour des insights de la communauté. Quelques articles que j'ai trouvé intéressants :
+                <ul>
+                    <li><a href="https://nureddineraslan.medium.com/understanding-state-management-with-provider-in-flut-e74e0b9e49d9" target="_blank" rel="noopener noreferrer">Provider pour la gestion d'état.</a></li>
+                    <li><a href="https://medium.com/@ozgeekaratas/connectivity-and-connection-change-listener-in-flutter-b30627ce135b" target="_blank" rel="noopener noreferrer">Pour apprendre à gérer la connectivité.</a> S'associe bien avec provider, évoqué précedemment.</li>
+                    <li><a href="https://medium.com/@lumeilin301/multi-language-in-flutter-ee393b298ec5" target="_blank" rel="noopener noreferrer">Pour apprendre à créer des applications multilingues.</a></li>
+                </ul>
+            </li>
+            <li>Des chaînes YouTube pour illustrer les utilisations des différents widget :
+                <ul>
+                    <li><a href="https://www.youtube.com/@createdbykoko/videos" target="_blank" rel="noopener noreferrer">Mitch Koko</a>, ma chaîne préférée.</li>
+                    <li><a href="https://www.youtube.com/@MaxonFlutter" target="_blank" rel="noopener noreferrer">MaxOnFlutter</a>, pour aller un peu plus loin.</li>
+                    <li>Sans oublier la <a href="https://www.youtube.com/@flutterdev/videos" target="_blank" rel="noopener noreferrer">chaîne officielle de FLutter</a>.</li>
+                </ul>
+            </li>
+            <li>J'ai rejoint un groupe de développeur très actif sur  <a href="https://www.linkedin.com/groups/10408911/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, ce qui me permet de voir tous les jours de nouveaux posts.</li>
+            <li>
+                J'ai aussi créé un Google Alert avec les mots clés :
+                <ul>
+                    <li>Flutter</li>
+                    <li>Dart</li>
+                    <li>Provider</li>
+                </ul>
+            </li>
         </ul>
 
-        <p>Je met aussi à profit les connaissances acquises en réalisant des projets :</p>
+        <h3>Comment je met en pratique :</h3>
         <ul>
             <li>
                 Création d'une application mobile (Android) qui permet de tracker les postes de mon père.

@@ -41,6 +41,7 @@
                 <li>Base de données</li>
                 <li>Programmation (Web / logicielle)</li>
                 <li>Infrastructure, systèmes et réseaux (durant le premier semestre)</li>
+                <li>Cybersécurité.</li>
             </ul>
         </section>
         <section>
@@ -64,4 +65,6 @@
             <li>Base de données : MySQL, NoSQL.</li>
         </ul>
     </article>
+
+    <a href="/assets/pdf/6- Annexe 6-1 - Tableau de synthèse - Epreuve E4 - BTS SIO 2024.pdf" target="_blank">Consulter mon tableau de compétence. </a>
 </section>

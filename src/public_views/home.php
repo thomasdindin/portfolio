@@ -149,7 +149,7 @@
             <span class="auteur">- Baptiste Dhaussy, chef de projet chez Lyreco France.</span>
         </div>
     </div>
-    <p id="cv">Vous pouvez aussi <a href="./assets/pdf/CV_THOMAS_DINDIN_2023-07-23.pdf" download="CV">Télécharger mon cv</a> .</p>
+    <p id="cv">Vous pouvez aussi <a href="./assets/pdf/CV_2024-02-11_THOMAS_DINDIN.pdf" download="CV">Télécharger mon cv</a>.</p>
 </section>
 
 <!-- Veille technologique : Flutter-->
